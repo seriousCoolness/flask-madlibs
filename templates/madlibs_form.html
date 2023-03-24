@@ -1,0 +1,15 @@
+{% extends 'navbar_basic.html' %}
+
+{% block title %}Word Form{% endblock %}
+
+{% block content %}
+
+<form action="/story" method="POST">
+    <ul>
+    {% for prompt in parts %}
+        <li>{{prompt}}: <input type="text" name={{prompt}} placeholder={{prompt}}></li>
+    {% endfor %}
+    </ul>
+    <button>Submit.</button>
+</form>
+{% endblock %}
